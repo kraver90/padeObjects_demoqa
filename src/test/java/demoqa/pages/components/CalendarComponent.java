@@ -12,7 +12,7 @@ public class CalendarComponent {
             yearDatapicker = $(".react-datepicker__year-select"),
             dayDatapicker = $(".react-datepicker__month");
 
-    public void setDate(String day, String month, String year){
+    public void setDate(String day, String month, String year) {
         dataInput.click();
         monthDatapicker.selectOption(month);
         yearDatapicker.selectOption(year);

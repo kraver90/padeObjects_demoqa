@@ -1,6 +1,7 @@
 package demoqa.test;
 
 import org.junit.jupiter.api.Test;
+
 import static demoqa.test.TestData.*;
 
 public class StudentRegistrationForm extends TestBase {
