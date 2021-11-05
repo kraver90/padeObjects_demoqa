@@ -1,8 +1,12 @@
 package demoqa.test;
 
 import org.junit.jupiter.api.Test;
+import static demoqa.test.TestData.*;
 
 public class StudentRegistrationForm extends TestBase {
+
+    //не получилось поле класса JavaFaker убрать в класс TestData
+    String firstName = faker.name().firstName();
 
     @Test
     void fullFormTest() {
@@ -11,16 +15,16 @@ public class StudentRegistrationForm extends TestBase {
 
         //заполняем основные поля
         registationPage
-                .typeFirstName("Dmitryi")
-                .typeLastName("Kochurov")
-                .typeEmail("test@test.ru")
+                .typeFirstName(firstName)
+                .typeLastName(lastname)
+                .typeEmail(email)
                 .typeGender("Male")
-                .typePhoneNumber("9000431111")
+                .typePhoneNumber(phoneNumber)
                 .typeSubject("Arts")
-                .typeUploadPicture("image.png")
+                .typeUploadPicture(picture)
                 .typeHobbies("Reading")
                 .typeHobbies("Music")
-                .typeCurrentAddress("Мой адрес не дом и не улица, мой адрес сегодня такой")
+                .typeCurrentAddress(address)
                 .typeState("NCR")
                 .typeCity("Noida");
 
@@ -32,15 +36,15 @@ public class StudentRegistrationForm extends TestBase {
 
         //Сравниваем полученное значение
         registationPage
-                .checkResultsValue("Student Name", "Dmitryi Kochurov")
-                .checkResultsValue("Student Email", "test@test.ru")
+                .checkResultsValue("Student Name", firstName)
+                .checkResultsValue("Student Email", email)
                 .checkResultsValue("Gender", "Male")
-                .checkResultsValue("Mobile", "9000431111")
+                .checkResultsValue("Mobile", phoneNumber)
                 .checkResultsValue("Date of Birth", "18 July,1990")
                 .checkResultsValue("Subjects", "Arts")
                 .checkResultsValue("Hobbies", "Reading, Music")
-                .checkResultsValue("Picture", "image.png")
-                .checkResultsValue("Address", "Мой адрес не дом и не улица, мой адрес сегодня такой")
+                .checkResultsValue("Picture", picture)
+                .checkResultsValue("Address", address)
                 .checkResultsValue("State and City", "NCR Noida");
     }
 }

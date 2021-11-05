@@ -1,7 +1,7 @@
-package demoqa.pades;
+package demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqa.pades.components.CalendarComponent;
+import demoqa.pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -81,7 +81,7 @@ public class RegistationPage {
 
     public RegistationPage typeState(String value) {
         $("#state").click();
-        stateCitySelected.$(byText(value)).click();
+        stateCitySelected.$(byText(value)).scrollTo().click();
         return this;
     }
 

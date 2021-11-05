@@ -1,8 +1,11 @@
 package demoqa.test;
 
 import com.codeborne.selenide.Configuration;
-import demoqa.pades.RegistationPage;
+import com.github.javafaker.Faker;
+import demoqa.pages.RegistationPage;
 import org.junit.jupiter.api.BeforeAll;
+
+import java.util.Locale;
 
 public class TestBase {
 
@@ -13,4 +16,5 @@ public class TestBase {
     }
 
     RegistationPage registationPage = new RegistationPage();
+    Faker faker = new Faker(new Locale("ru"));
 }
