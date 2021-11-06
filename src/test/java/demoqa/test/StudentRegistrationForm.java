@@ -2,12 +2,7 @@ package demoqa.test;
 
 import org.junit.jupiter.api.Test;
 
-import static demoqa.test.TestData.*;
-
-public class StudentRegistrationForm extends TestBase {
-
-    //не получилось поле класса JavaFaker убрать в класс TestData
-    String firstName = faker.name().firstName();
+public class StudentRegistrationForm extends TestData {
 
     @Test
     void fullFormTest() {
@@ -17,7 +12,7 @@ public class StudentRegistrationForm extends TestBase {
         //заполняем основные поля
         registationPage
                 .typeFirstName(firstName)
-                .typeLastName(lastname)
+                .typeLastName(lastName)
                 .typeEmail(email)
                 .typeGender("Male")
                 .typePhoneNumber(phoneNumber)
@@ -37,7 +32,7 @@ public class StudentRegistrationForm extends TestBase {
 
         //Сравниваем полученное значение
         registationPage
-                .checkResultsValue("Student Name", firstName)
+                .checkResultsValue("Student Name", firstName + " " + lastName)
                 .checkResultsValue("Student Email", email)
                 .checkResultsValue("Gender", "Male")
                 .checkResultsValue("Mobile", phoneNumber)

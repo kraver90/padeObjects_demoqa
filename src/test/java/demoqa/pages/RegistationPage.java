@@ -23,6 +23,8 @@ public class RegistationPage {
             hobbiesCheckbox = $("#hobbiesWrapper"),
             currentAddressInput = $("#currentAddress"),
             stateCitySelected = $("#stateCity-wrapper"),
+            stateSelected = $("#state"),
+            citySelected = $("#city"),
             submitClick = $("#submit"),
             resultsTable = $(".table-responsive");
 
@@ -80,13 +82,13 @@ public class RegistationPage {
     }
 
     public RegistationPage typeState(String value) {
-        $("#state").click();
+        stateSelected.click();
         stateCitySelected.$(byText(value)).scrollTo().click();
         return this;
     }
 
     public RegistationPage typeCity(String value) {
-        $("#city").click();
+        citySelected.click();
         stateCitySelected.$(byText(value)).scrollTo().click();
         return this;
     }

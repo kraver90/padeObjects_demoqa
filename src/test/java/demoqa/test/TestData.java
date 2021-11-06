@@ -1,11 +1,15 @@
 package demoqa.test;
 
-public class TestData {
-    public static String
-            lastname = "Kochurov",
-            email = "test@test.ru",
-            phoneNumber = "9000431111",
-            picture = "image.png",
-            address = "Мой адрес не дом и не улица, мой адрес сегодня такой";
+import com.github.javafaker.Faker;
+import java.util.Locale;
 
+public class TestData extends TestBase {
+
+    Faker faker = new Faker(new Locale("ru"));
+    public String firstName = faker.name().firstName();
+    public String lastName = faker.name().lastName();
+    public String email = faker.internet().emailAddress("guruqa");
+    public String phoneNumber = faker.phoneNumber().subscriberNumber(10);
+    public String address = faker.address().streetAddress();
+    public String picture = "image.png";
 }
