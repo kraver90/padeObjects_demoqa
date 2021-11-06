@@ -1,4 +1,4 @@
-package demoqa.test;
+package demoqa.testData;
 
 import com.github.javafaker.Faker;
 import java.util.Locale;

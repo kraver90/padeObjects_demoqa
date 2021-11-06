@@ -2,6 +2,7 @@ package demoqa.test;
 
 import com.codeborne.selenide.Configuration;
 import demoqa.pages.RegistationPage;
+import demoqa.testData.TestData;
 import org.junit.jupiter.api.BeforeAll;
 
 
