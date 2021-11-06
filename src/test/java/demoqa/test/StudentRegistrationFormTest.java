@@ -2,7 +2,7 @@ package demoqa.test;
 
 import org.junit.jupiter.api.Test;
 
-public class StudentRegistrationForm extends TestData {
+public class StudentRegistrationFormTest extends TestBase {
 
     @Test
     void fullFormTest() {
@@ -11,16 +11,16 @@ public class StudentRegistrationForm extends TestData {
 
         //заполняем основные поля
         registationPage
-                .typeFirstName(firstName)
-                .typeLastName(lastName)
-                .typeEmail(email)
+                .typeFirstName(testData.firstName)
+                .typeLastName(testData.lastName)
+                .typeEmail(testData.email)
                 .typeGender("Male")
-                .typePhoneNumber(phoneNumber)
+                .typePhoneNumber(testData.phoneNumber)
                 .typeSubject("Arts")
-                .typeUploadPicture(picture)
+                .typeUploadPicture(testData.picture)
                 .typeHobbies("Reading")
                 .typeHobbies("Music")
-                .typeCurrentAddress(address)
+                .typeCurrentAddress(testData.address)
                 .typeState("NCR")
                 .typeCity("Noida");
 
@@ -32,15 +32,15 @@ public class StudentRegistrationForm extends TestData {
 
         //Сравниваем полученное значение
         registationPage
-                .checkResultsValue("Student Name", firstName + " " + lastName)
-                .checkResultsValue("Student Email", email)
+                .checkResultsValue("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResultsValue("Student Email", testData.email)
                 .checkResultsValue("Gender", "Male")
-                .checkResultsValue("Mobile", phoneNumber)
+                .checkResultsValue("Mobile", testData.phoneNumber)
                 .checkResultsValue("Date of Birth", "18 July,1990")
                 .checkResultsValue("Subjects", "Arts")
                 .checkResultsValue("Hobbies", "Reading, Music")
-                .checkResultsValue("Picture", picture)
-                .checkResultsValue("Address", address)
+                .checkResultsValue("Picture", testData.picture)
+                .checkResultsValue("Address", testData.address)
                 .checkResultsValue("State and City", "NCR Noida");
     }
 }

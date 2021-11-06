@@ -14,4 +14,5 @@ public class TestBase {
     }
 
     RegistationPage registationPage = new RegistationPage();
+    TestData testData = new TestData();
 }
