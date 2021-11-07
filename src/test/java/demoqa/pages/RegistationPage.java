@@ -28,8 +28,6 @@ public class RegistationPage {
             submitClick = $("#submit"),
             resultsTable = $(".table-responsive");
 
-    public CalendarComponent calendarComponent = new CalendarComponent();
-
 
     public void openPage() {
         open("https://demoqa.com/automation-practice-form");
@@ -58,6 +56,11 @@ public class RegistationPage {
 
     public RegistationPage typePhoneNumber(String value) {
         phoneNumberInput.setValue(value);
+        return this;
+    }
+
+    public RegistationPage setDate(String day, String month, String year) {
+        new CalendarComponent().setDate(day, month, year);
         return this;
     }
 
